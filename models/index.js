@@ -9,7 +9,7 @@ Instructor.hasMany(Subject, {
   foreignKey: 'instructor_id'
 });
 
-Question.belongsTo(Subject, {
+Question.belongsToMany(Subject, {
   foreignKey: 'question_id'
 });
 
@@ -17,5 +17,15 @@ AnswerChoices.belongsToMany(Question, {
   foreignKey: 'answerchoices_id'
 });
 
+Question.hasMany(AnswerChoices, {
+    foreignKey: 'question_id'
+  });
+  
 
-module.exports = { Instructor, Subject, Question, AnswerChoices };
+
+module.exports = { 
+    Instructor, 
+    Subject, 
+    Question, 
+    AnswerChoices 
+};
