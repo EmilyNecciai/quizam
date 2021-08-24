@@ -21,15 +21,26 @@ Question.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    //define a body column
-    body: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    //define a password column
+    //define a answer columns
     correct_answer: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    choiceB: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    },
+    choiceB: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    choiceC: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    choiceD: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
     subject_id: {
       type: DataTypes.INTEGER,
