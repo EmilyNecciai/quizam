@@ -21,11 +21,6 @@ Question.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    //define a body column
-    body: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     //define a answer columns
     correct_answer: {
       type: DataTypes.STRING,
