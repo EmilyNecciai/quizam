@@ -10,20 +10,62 @@
     <!------------Google Fonts Used Rampart One--------------->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap"
+      rel="stylesheet"
+    />
 
-
+    <!---Bootstrap-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
   </head>
 
   <body>
-
     <head>
-      <h1>Quiz<img class="logo" src="../images/logo1.png" />am</h1>
+      <h1 class="logo-text">Quiz<img class="logo" src="../images/logo1.png" />am</h1>
     </head>
 
-    <div class="login-image">
-        The image for login page goes here:
+    <div class="card login">
+      <div class="card-body">
+        <form>
+            ​<picture>
+                <img src="../images/logo2.png" class="img-fluid img-thumbnail rounded-circle" alt="cloud with lighthning bolt">
+              </picture>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address:</label>
+            <input
+              type="email"
+              class="form-control"
+              id="InputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+            />
+            <small id="emailHelp" class="form-text text-muted"
+              >We'll never share your email with anyone else.</small
+            >
+          </div>
+          <div class="form-group">
+            <label for="InputPassword">Password:</label>
+            <input
+              type="password"
+              class="form-control"
+              id="InputPassword"
+              placeholder="Password"
+            />
+          </div>
+          <button type="submit" class="btn btn-danger">Submit</button>
+        </form>
+      </div>
     </div>
 
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

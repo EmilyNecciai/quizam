@@ -20,20 +20,36 @@ body {
 }
 
 h1 {
-    font-family: 'Rampart One', cursive;
-    width: 100%;
-    text-align: center;
-    font-size: 100px;
-    
+  font-family: "Rampart One", cursive;
+  width: 100%;
+  text-align: center;
 }
 
 .logo {
-    height: 90px;
-    width: 90px;
-    /* -webkit-transform: scaleX(-1);
-    transform: scaleX(-1); */
+  height: 100px;
+  width: 100px;
+}
 
-  }
+.logo-text {
+    font-size: 100px;
+}
+
+form {
+width:600px;
+align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* 
 a {
