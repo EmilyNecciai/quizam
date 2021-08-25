@@ -9,7 +9,7 @@ const instructordata = [
     subject_id: 2
   },
 {...}
-
+// Test
 ];
 
 const seedInstructors = () => User.bulkCreate(instructordata , {individualHooks: true});
