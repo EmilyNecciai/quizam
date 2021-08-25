@@ -1,143 +1,135 @@
-const router = require('express').Router();
-const sequelize = require('../../config/connection');
-const { Subject, User, Comment, Vote } = require('../../models');
-const withAuth = require('../../utils/auth');
+const router = require("express").Router();
+const { Instructor, Subject, Question } = require("../../models");
+const withAuth = require("../../utils/auth");
 
-// get all users
-router.get('/', (req, res) => {
-  console.log('======================');
-  Post.findAll({
-    attributes: [
-      'id',
-      'name',
-      'subject_id'
-    ],
+// get all Subjects
+router.get("/", (req, res) => {
+  Subject.findAll({
+    attributes: ["id", "name", "subject_id"],
     include: [
       {
         model: Instructor,
-        attributes: ['id', 'name', 'email', 'user_id', 'created_at'],
-        // EMILY YOU LEFT OFF HERE ^^
-        include: {
-          model: User,
-          attributes: ['username']
-        }
+        attributes: ["id", "name", "email"],
       },
       {
-        model: User,
-        attributes: ['username']
-      }
-    ]
+        model: Question,
+        attributes: [
+          "id",
+          "title",
+          "correct_answer",
+          "choiceA",
+          "choiceB",
+          "choiceC",
+          "choiceD",
+          "subject_id",
+        ],
+      },
+    ],
   })
-    .then(dbPostData => res.json(dbPostData))
-    .catch(err => {
+    .then((dbSubjectData) => res.json(dbSubjectData))
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
 });
 
-router.get('/:id', (req, res) => {
-  Post.findOne({
+//Find Specific Subject
+router.get("/:id", (req, res) => {
+  Subject.findOne({
     where: {
-      id: req.params.id
+      id: req.params.id,
     },
-    attributes: [
-      'id',
-      'post_url',
-      'title',
-      'created_at',
-      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
-    ],
+    attributes: ["id", "name", "subject_id"],
     include: [
       {
-        model: Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-        include: {
-          model: User,
-          attributes: ['username']
-        }
+        model: Instructor,
+        attributes: ["id", "name", "email"],
       },
       {
-        model: User,
-        attributes: ['username']
-      }
-    ]
+        model: Question,
+        attributes: [
+          "id",
+          "title",
+          "correct_answer",
+          "choiceA",
+          "choiceB",
+          "choiceC",
+          "choiceD",
+          "subject_id",
+        ],
+      },
+    ],
   })
-    .then(dbPostData => {
-      if (!dbPostData) {
-        res.status(404).json({ message: 'No post found with this id' });
+    .then((dbSubjectData) => {
+      if (!dbSubjectData) {
+        res.status(404).json({ message: "No subject found with this id" });
         return;
       }
-      res.json(dbPostData);
+      res.json(dbSubjectData);
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
 });
 
-router.post('/', withAuth, (req, res) => {
-  // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
-  Post.create({
-    title: req.body.title,
-    post_url: req.body.post_url,
-    user_id: req.session.user_id
+//Create new Subject
+router.post("/", withAuth, (req, res) => {
+  // expects {title: 'Math!', instructor_id: 1}
+  Subject.create({
+    name: req.body.name,
+    instructor_id: req.body.instructor_id
   })
-    .then(dbPostData => res.json(dbPostData))
-    .catch(err => {
+    .then((dbSubjectData) => res.json(dbSubjectData))
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
 });
 
-router.put('/upvote', withAuth, (req, res) => {
-  // custom static method created in models/Post.js
-  Post.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, Comment, User })
-    .then(updatedVoteData => res.json(updatedVoteData))
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
 
-router.put('/:id', withAuth, (req, res) => {
-  Post.update(
+// Edit Subject Name
+router.put("/:id", withAuth, (req, res) => {
+  Subject.update(
     {
-      title: req.body.title
+      name: req.body.name,
     },
     {
       where: {
-        id: req.params.id
-      }
+        id: req.params.id,
+      },
     }
   )
-    .then(dbPostData => {
-      if (!dbPostData) {
-        res.status(404).json({ message: 'No post found with this id' });
+    .then((dbSubjectData) => {
+      if (!dbSubjectData) {
+        res.status(404).json({ message: "No subject found with this id" });
         return;
       }
-      res.json(dbPostData);
+      res.json(dbSubjectData);
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
 });
 
-router.delete('/:id', withAuth, (req, res) => {
-  console.log('id', req.params.id);
-  Post.destroy({
+
+// Delete Subject
+router.delete("/:id", withAuth, (req, res) => {
+  console.log("id", req.params.id);
+  Subject.destroy({
     where: {
-      id: req.params.id
-    }
+      id: req.params.id,
+    },
   })
-    .then(dbPostData => {
-      if (!dbPostData) {
-        res.status(404).json({ message: 'No post found with this id' });
+    .then((dbSubjectData) => {
+      if (!dbSubjectData) {
+        res.status(404).json({ message: "No subject found with this id" });
         return;
       }
-      res.json(dbPostData);
+      res.json(dbSubjectData);
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
