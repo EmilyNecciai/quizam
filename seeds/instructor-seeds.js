@@ -1,5 +1,5 @@
 const sequelize = require('../config/connection');
-const { Instructor, Questions } = require('../models');
+const { Instructor, Question} = require('../models');
 
 const instructordata = [
   {

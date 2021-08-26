@@ -1,34 +1,47 @@
 const sequelize = require('../config/connection');
-const { Questions, Subject} = require('../models');
+const { Question, Subject} = require('../models');
 
 const questionsdata = [
+    // HTML id = 1
+    // CSS id = 2
+    // JS = 3
+
   {
-    id: 'Question ID??'
-    title: 'What does HTML stand for?'
-    <br>
-    'A   Hyperlinks and Text Markup Language'
-    'B   Home Tool Markup Language'
-    'C   Hyper Text Markup Language',
-    
-    correct_answer: 'ChoiceC',
-    
-    choiceA: 'A   Hyperlinks and Text Markup Language',
-    choiceB: 'B   Home Tool Markup Language',
-    choiceC: 'C   Hyper Text Markup Language',
+    id: '001'
+    title: 'What does HTML stand for?',
+    choiceA: 'Hyperlinks and Text Markup Language',
+    choiceB: 'Home Tool Markup Language',
+    choiceC: 'Hyper Text Markup Language',
     choiceD: null,
-    subject_id: (HTML Course)
+    correct_answer: 'ChoiceC',
+    subject_id: 1
   },
 
 
   {
-    questions: 'Choose the correct HTML element for the largest heading.',
-    subject_id: ?? (HTML)
+    id: '002'
+    title: 'Choose the correct HTML element for the largest heading:',
+    choiceA: '<h6>',
+    choiceB: '<head>',
+    choiceC: '<heading>',
+    choiceD: '<h1>'
+    correct_answer: 'ChoiceD',
+    subject_id: 1 
   },
 
   {
-    questions: 'What is the correct HTML for adding a background color?',
-    subject_id: ?? (HTML)
+    id: '',
+    title: '',
+    choiceA: '',
+    choiceB: '',
+    choiceC: '',
+    choiceD: '',
+    correct_answer: 'CorrectAnswer'
   },
+
+
+
+
 
 // Test
 ];
