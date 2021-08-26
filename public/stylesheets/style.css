@@ -57,7 +57,7 @@ align-items: center;
   margin-bottom: 20px;
 }
 
-.submit {
+.login-button {
   margin-top: 20px;
 }
 
@@ -65,12 +65,12 @@ align-items: center;
   margin-bottom:20px;
 }
 
-.login-button, .signUp-button {
+.loginBtn-container, .signUp-button {
  text-align: center;
 }
 
-btn:hover {
-  
+.login-button, .signUp {
+  width: 100%;
 }
 
 
