@@ -23,20 +23,26 @@ body {
   background-color: var(--first);
 }
 
-
 .logo {
   height: 150px;
   width: 150px;
 }
 
+.image-login {
+  margin: auto;
+  width: 60%;
+}
+
 .login-icon {
   width: 200px;
   height: 200px;
+  margin-bottom: 20px;
 }
 
 .login {
   align-items: center;
   padding: 50px;
+  margin-bottom: 100px;
 }
 
 form {
@@ -48,14 +54,27 @@ align-items: center;
 }
 
 .btn {
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 .submit {
-  background-color: var(--fourth);
-  color: white;
   margin-top: 20px;
 }
+
+.email-container {
+  margin-bottom:20px;
+}
+
+.login-button, .signUp-button {
+ text-align: center;
+}
+
+btn:hover {
+  
+}
+
+
+
 
 
 
