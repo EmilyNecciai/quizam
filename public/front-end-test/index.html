@@ -3,13 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content ="width="device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="../stylesheets/style.css" />
+
     <link rel="shortcut icon" type="image/jpg" href="../images/logo.png" />
-    <title>QUIZZAM</title>
 
     <!------------Google Fonts Used Rampart One--------------->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap"
       rel="stylesheet"
@@ -19,48 +18,69 @@
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
-      crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="../stylesheets/style.css" />
+    
+
+    <title>QUIZZAM</title>
+
+    
   </head>
 
   <body>
     <head>
-      <h1 class="logo-text">Quiz<img class="logo" src="../images/logo1.png" />am</h1>
+      <h1>Quiz<img class="logo" src="../images/logo1.png"/>am</h1>
     </head>
 
-    <div class="card login">
-      <div class="card-body">
-        <form>
-            ​<picture>
-                <img src="../images/logo2.png" class="img-fluid img-thumbnail rounded-circle" alt="cloud with lighthning bolt">
-              </picture>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address:</label>
-            <input
-              type="email"
-              class="form-control"
-              id="InputEmail1"
-              aria-describedby="emailHelp"
-              placeholder="Enter email"
-            />
-            <small id="emailHelp" class="form-text text-muted"
-              >We'll never share your email with anyone else.</small
-            >
-          </div>
-          <div class="form-group">
-            <label for="InputPassword">Password:</label>
-            <input
-              type="password"
-              class="form-control"
-              id="InputPassword"
-              placeholder="Password"
-            />
-          </div>
-          <button type="submit" class="btn btn-danger">Submit</button>
-        </form>
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="card col-6 login ">
+            <form class="col-8">
+              <img class="login-icon" src="../images/loginicon.png" class="img-fluid img-thumbnail rounded-circle" alt="cloud with lighthning bolt">
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Full Name:</label>
+                <input
+                  type="name"
+                  class="form-control"
+                  id="InputFullName"
+                  aria-describedby="emailHelp"
+                  placeholder="Enter email"
+                />
+                ​
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address:</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="InputEmail1"
+                  aria-describedby="emailHelp"
+                  placeholder="Enter email"
+                />
+                <small id="emailHelp" class="form-text text-muted"
+                  >We'll never share your email with anyone else.</small
+                >
+              </div>
+              <div class="form-group">
+                <label for="InputPassword">Password:</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="InputPassword"
+                  placeholder="Password"
+                />
+              </div>
+              <button type="submit" class="btn btn-light submit">Login</button>
+              <div>
+                <button type="submit" class="btn btn-danger">Sign-Up For a Free Account</button>
+              </div>
+            </form>
+        </div>
       </div>
+
     </div>
+
+    
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
