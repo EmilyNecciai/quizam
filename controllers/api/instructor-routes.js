@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Instructor, Subject, Question} = require('../../models');
 
-// get all users
+// get all Instructors
 router.get('/', (req, res) => {
   Instructor.findAll({
     attributes: { exclude: ['password'] }
@@ -13,6 +13,7 @@ router.get('/', (req, res) => {
     });
 });
 
+//Find instructor by ID
 router.get('/:id', (req, res) => {
   Instructor.findOne({
     attributes: { exclude: ['password'] },
@@ -43,6 +44,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
+//Create new user
 router.post('/', (req, res) => {
   // expects {name: 'Emily Mayeski', email: 'enmayeski@gmail.com', password: 'password1234'}
   Instructor.create({
@@ -65,6 +67,7 @@ router.post('/', (req, res) => {
     });
 });
 
+//Log In
 router.post('/login', (req, res) => {
   // expects {email: 'enmayeski@gmail.com', password: 'password1234'}
   Instructor.findOne({
@@ -129,6 +132,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
+//delete user (may not be needed)
 router.delete('/:id', (req, res) => {
   Instructor.destroy({
     where: {
