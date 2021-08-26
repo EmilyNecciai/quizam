@@ -3,7 +3,7 @@ const { Instructor, Subject, Question } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 // get all Questions
-router.get("/", (req, res) => {
+router.get("/", withAuth, (req, res) => {
   Question.findAll({
     attributes: [
       "id",
@@ -34,7 +34,7 @@ router.get("/", (req, res) => {
 });
 
 //Find Specific Question
-router.get("/:id", (req, res) => {
+router.get("/:id", withAuth, (req, res) => {
   Question.findOne({
     where: {
       id: req.params.id,

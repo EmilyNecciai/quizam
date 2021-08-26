@@ -94,6 +94,7 @@ router.post('/login', (req, res) => {
   });
 });
 
+//Log Out
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
