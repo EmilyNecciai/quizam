@@ -2,11 +2,11 @@ async function editFormHandler(event) {
     event.preventDefault();
   
     const name = document.querySelector('input[name="subject-name"]').value.trim();
-    
+
     const id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
     ];
-    const response = await fetch(`/api/posts/${id}`, {
+    const response = await fetch(`/api/subjects/${id}`, {
       method: 'PUT',
       body: JSON.stringify({
         name
