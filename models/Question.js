@@ -26,7 +26,7 @@ Question.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    choiceB: {
+    choiceA: {
     type: DataTypes.STRING,
     allowNull: false,
     },

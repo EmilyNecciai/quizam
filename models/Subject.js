@@ -21,6 +21,13 @@ Subject.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    instructor_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "instructor",
+        key: "id",
+      },
+    },
   },
   {
     //TABLE CONFIGURATION OPTIONS GO HERE ((https://sequelize.org/v5/manual/models-definition.html#configuration))
