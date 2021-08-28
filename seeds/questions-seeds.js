@@ -6,8 +6,10 @@ const questionsdata = [
     // CSS id = 2
     // JS = 3
 
+
+    // HTML QUIZ
   {
-    id: '001'
+    id: 'HTML001'
     title: 'What does HTML stand for?',
     choiceA: 'Hyperlinks and Text Markup Language',
     choiceB: 'Home Tool Markup Language',
@@ -19,7 +21,7 @@ const questionsdata = [
 
 
   {
-    id: '002'
+    id: 'HTML002'
     title: 'Choose the correct HTML element for the largest heading:',
     choiceA: '<h6>',
     choiceB: '<head>',
@@ -30,16 +32,16 @@ const questionsdata = [
   },
 
   {
-    id: '',
-    title: '',
-    choiceA: '',
-    choiceB: '',
-    choiceC: '',
-    choiceD: '',
-    correct_answer: 'CorrectAnswer'
+    id: 'HTML003',
+    title: 'What is the correct HTML for adding a background color?',
+    choiceA: '<body style="background-color:yellow;">',
+    choiceB: '<background>yellow</background>',
+    choiceC: '<body bg="yellow">',
+    choiceD: null,
+    correct_answer: 'ChoiceA'
   },
 
-
+// CSS QUIZ
 
 
 
