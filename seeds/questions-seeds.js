@@ -9,39 +9,51 @@ const questionsdata = [
 
     // HTML QUIZ
   {
-    id: 'HTML001'
+    id: '',
     title: 'What does HTML stand for?',
     choiceA: 'Hyperlinks and Text Markup Language',
     choiceB: 'Home Tool Markup Language',
     choiceC: 'Hyper Text Markup Language',
     choiceD: null,
-    correct_answer: 'ChoiceC',
-    subject_id: 1
+    correct_answer: 'choiceC',
+    subject_id: 
   },
 
 
   {
-    id: 'HTML002'
+    id: '',
     title: 'Choose the correct HTML element for the largest heading:',
     choiceA: '<h6>',
     choiceB: '<head>',
     choiceC: '<heading>',
-    choiceD: '<h1>'
-    correct_answer: 'ChoiceD',
-    subject_id: 1 
+    choiceD: '<h1>',
+    correct_answer: 'choiceD',
+    subject_id:  
   },
 
   {
-    id: 'HTML003',
+    id: '',
     title: 'What is the correct HTML for adding a background color?',
     choiceA: '<body style="background-color:yellow;">',
     choiceB: '<background>yellow</background>',
     choiceC: '<body bg="yellow">',
     choiceD: null,
-    correct_answer: 'ChoiceA'
+    correct_answer: 'choiceA',
+    subject_id:
   },
 
 // CSS QUIZ
+
+  {
+    id: '',
+    title: 'What is the correct HTML for referring to an external style sheet?',
+    choiceA: '<link rel="stylesheet" type="text/css" href="mystyle.css">',
+    choiceB: 'Home<style src="mystyle.css">',
+    choiceC: '<stylesheet>mystyle.css</stylesheet>',
+    choiceD: null,
+    correct_answer: 'choiceA',
+    subject_id:
+  }
 
 
 

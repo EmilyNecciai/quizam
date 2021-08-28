@@ -3,7 +3,7 @@ const { subject, Question } = require('../models');
 
 const subjectdata = [
   {
-    id: '1'
+    id: ''
     name: 'HTML',
     question_id: '',
     instructor_id: ''
@@ -11,14 +11,14 @@ const subjectdata = [
 
 
   {
-    id: '2',
+    id: '',
     name: 'CSS',
     question_id:''
     instructor_id: ''
   },
 
   {
-    id: '3'
+    id: '3
     name: 'JavaScript',
     question_id: '',
     instructor_id: ''

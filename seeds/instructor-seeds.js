@@ -6,21 +6,21 @@ const instructordata = [
     name: 'Emily Necciai Mayeski',
     email: 'Emily0@quizam.ca',
     password: 'password0123',
-    subject_id: 3
+    subject_id: 
   },
 
   {
     name: 'Baiyang Qi ',
     email: 'Baiyang0@gwu.ca',
     password: 'password1234',
-    subject_id: 3
+    subject_id: 
   },
 
   {
     name: 'Shane Crisostomo',
     email: 'Shane0@usc.ca',
     password: 'password2345',
-    subject_id: 2
+    subject_id: 
   },
 
   {
