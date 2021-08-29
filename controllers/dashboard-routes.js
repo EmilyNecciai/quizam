@@ -58,7 +58,7 @@ router.get("/:id", withAuth, (req, res) => {
           "choiceB",
           "choiceC",
           "choiceD",
-          "subject_id",
+          "subject_id"
         ],
       },
     ],

@@ -13,7 +13,7 @@ router.get("/", withAuth, (req, res) => {
       "choiceB",
       "choiceC",
       "choiceD",
-      "subject_id",
+      "subject_id"
     ],
     include: [
       {

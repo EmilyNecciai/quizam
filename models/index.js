@@ -14,13 +14,12 @@ Subject.hasMany(Question, {
   onDelete: 'CASCADE'
 });
 
-
 Question.belongsToMany(Subject, {
   foreignKey: 'question_id',
   onDelete: 'CASCADE'
 });
 
-
+// export
 module.exports = { 
     Instructor, 
     Subject, 

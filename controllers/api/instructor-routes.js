@@ -1,89 +1,100 @@
-const router = require('express').Router();
-const { Instructor, Subject, Question} = require('../../models');
+const router = require("express").Router();
+const { Instructor, Subject, Question } = require("../../models");
 
-// get all Instructors
-router.get('/', (req, res) => {
+// get all instructor
+router.get("/", (req, res) => {
   Instructor.findAll({
-    attributes: { exclude: ['password'] }
+    attributes: { exclude: ["password"] },
   })
-    .then(dbInstructorData => res.json(dbInstructorData))
-    .catch(err => {
+    .then((dbInstructorData) => res.json(dbInstructorData))
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
 });
 
 //Find instructor by ID
-router.get('/:id', (req, res) => {
+router.get("/:id", (req, res) => {
   Instructor.findOne({
-    attributes: { exclude: ['password'] },
+    attributes: { exclude: ["password"] },
     where: {
-      id: req.params.id
+      id: req.params.id,
     },
     include: [
       {
         model: Subject,
-        attributes: ['id', 'name']
+        attributes: ["id", "name"],
       },
       {
         model: Question,
-        attributes: ['id', 'title', 'correct_answer', 'choiceA', 'choiceB', 'choiceC', 'choiceD', 'subject_id'],
-      }
-    ]
+        attributes: [
+          "id",
+          "title",
+          "correct_answer",
+          "choiceA",
+          "choiceB",
+          "choiceC",
+          "choiceD",
+          "subject_id"
+        ],
+      },
+    ],
   })
-    .then(dbInstructorData => {
+    .then((dbInstructorData) => {
       if (!dbInstructorData) {
-        res.status(404).json({ message: 'No instructor found with this id' });
+        res.status(404).json({ message: "No instructor found with this id" });
         return;
       }
       res.json(dbInstructorData);
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
 });
 
 //Create new user
-router.post('/', (req, res) => {
+router.post("/", (req, res) => {
   // expects {name: 'Emily Mayeski', email: 'enmayeski@gmail.com', password: 'password1234'}
   Instructor.create({
     name: req.body.name,
     email: req.body.email,
-    password: req.body.password
+    password: req.body.password,
   })
-    .then(dbInstructorData => {
+    .then((dbInstructorData) => {
       req.session.save(() => {
-        req.session.user_id = dbInstructorData.id;
+        req.session.id = dbInstructorData.id;
         req.session.name = dbInstructorData.name;
         req.session.loggedIn = true;
-  
+
         res.json(dbInstructorData);
       });
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
 });
 
 //Log In
-router.post('/login', (req, res) => {
+router.post("/login", (req, res) => {
   // expects {email: 'enmayeski@gmail.com', password: 'password1234'}
   Instructor.findOne({
     where: {
-      email: req.body.email
-    }
-  }).then(dbInstructorData => {
+      email: req.body.email,
+    },
+  }).then((dbInstructorData) => {
     if (!dbInstructorData) {
-      res.status(400).json({ message: 'No instructor with that email address!' });
+      res
+        .status(400)
+        .json({ message: "No instructor with that email address!" });
       return;
     }
 
     const validPassword = dbInstructorData.checkPassword(req.body.password);
 
     if (!validPassword) {
-      res.status(400).json({ message: 'Incorrect password!' });
+      res.status(400).json({ message: "Incorrect password!" });
       return;
     }
 
@@ -91,62 +102,61 @@ router.post('/login', (req, res) => {
       req.session.id = dbInstructorData.id;
       req.session.name = dbInstructorData.name;
       req.session.loggedIn = true;
-  
-      res.json({ user: dbInstructorData, message: 'You are now logged in!' });
+
+      res.json({ user: dbInstructorData, message: "You are now logged in!" });
     });
   });
 });
 
 //Log Out
-router.post('/logout', (req, res) => {
+router.post("/logout", (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
     });
-  }
-  else {
+  } else {
     res.status(404).end();
   }
 });
 
-router.put('/:id', (req, res) => {
+router.put("/:id", (req, res) => {
   // expects {name: 'Emily Mayeski', email: 'enmayeski@gmail.com', password: 'password1234'}
 
   // pass in req.body instead to only update what's passed through
   Instructor.update(req.body, {
     individualHooks: true,
     where: {
-      id: req.params.id
-    }
+      id: req.params.id,
+    },
   })
-    .then(dbInstructorData => {
+    .then((dbInstructorData) => {
       if (!dbInstructorData) {
-        res.status(404).json({ message: 'No user found with this id' });
+        res.status(404).json({ message: "No user found with this id" });
         return;
       }
       res.json(dbInstructorData);
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
 });
 
 //delete user (may not be needed)
-router.delete('/:id', (req, res) => {
+router.delete("/:id", (req, res) => {
   Instructor.destroy({
     where: {
-      id: req.params.id
-    }
+      id: req.params.id,
+    },
   })
-    .then(dbInstructorData => {
+    .then((dbInstructorData) => {
       if (!dbInstructorData) {
-        res.status(404).json({ message: 'No user found with this id' });
+        res.status(404).json({ message: "No instructor found with this id" });
         return;
       }
       res.json(dbInstructorData);
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
