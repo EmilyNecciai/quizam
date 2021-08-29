@@ -1,8 +1,12 @@
-const { Model, DataTypes } = require("sequalize");
+const { Model, DataTypes } = require("sequelize");
+const bcrypt = require('bcrypt');
 const sequelize = require("../config/connection");
 //create our Instructor model
+
 class Instructor extends Model {}
-//definte table columns and configurations
+//define table columns and configurations
+
+
 Instructor.init(
   {
     //define an ID column
@@ -16,12 +20,12 @@ Instructor.init(
       // turn on auto increment
       autoIncrement: true,
     },
-    //define a instructorname column
+    //define a instructor name column
     name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    //definte an email column
+    //define an email column
     email: {
       type: DataTypes.STRING,
       allowNull: false,
