@@ -27,7 +27,7 @@ const instructordata = [
     name: 'Gaye Proctor ',
     email: 'Gaye0@inschool2.ca',
     password: 'password3456',
-    subject_id: 1
+    subject_id: 
   },
 
 
