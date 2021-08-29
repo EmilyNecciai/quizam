@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { Instructor, Subject, Question } = require("../models");
-const withAuth = require("../../utils/auth");
+const withAuth = require("../utils/auth");
 
 // get all Questions
 router.get("/", withAuth, (req, res) => {

@@ -14,7 +14,7 @@ Subject.hasMany(Question, {
   onDelete: 'CASCADE'
 });
 
-Question.belongsToMany(Subject, {
+Question.belongsTo(Subject, {
   foreignKey: 'question_id',
   onDelete: 'CASCADE'
 });

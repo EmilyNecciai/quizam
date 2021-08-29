@@ -33,13 +33,6 @@ Instructor.init(
         len: [4],
       },
     },
-    subject_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "subjects",
-        key: "id",
-      },
-    },
   },
   {
     hooks: {
@@ -55,8 +48,7 @@ Instructor.init(
         return updatedInstructor;
       },
     },
-  },
-  {
+
     // pass in our imported sequelize connection (the direct connection to our database)
     sequelize,
     timestamps: false,
