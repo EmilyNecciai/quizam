@@ -5,28 +5,28 @@ const instructordata = [
   {
     name: 'Emily Necciai Mayeski',
     email: 'Emily0@quizam.ca',
-    password: 'password0123',
+    password: 'password01',
     subject_id: 
   },
 
   {
     name: 'Baiyang Qi ',
     email: 'Baiyang0@guizam.ca',
-    password: 'password1234',
+    password: 'password02',
     subject_id: 
   },
 
   {
     name: 'Shane Crisostomo',
     email: 'Shane0@quizam.ca',
-    password: 'password2345',
+    password: 'password03',
     subject_id: 
   },
 
   {
     name: 'Gaye Proctor ',
     email: 'Gaye0@guizam.ca',
-    password: 'password3456',
+    password: 'password04',
     subject_id: 
   },
 
