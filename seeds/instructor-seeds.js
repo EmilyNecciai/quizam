@@ -11,21 +11,21 @@ const instructordata = [
 
   {
     name: 'Baiyang Qi ',
-    email: 'Baiyang0@gwu.ca',
+    email: 'Baiyang0@guizam.ca',
     password: 'password1234',
     subject_id: 
   },
 
   {
     name: 'Shane Crisostomo',
-    email: 'Shane0@usc.ca',
+    email: 'Shane0@quizam.ca',
     password: 'password2345',
     subject_id: 
   },
 
   {
     name: 'Gaye Proctor ',
-    email: 'Gaye0@inschool2.ca',
+    email: 'Gaye0@guizam.ca',
     password: 'password3456',
     subject_id: 
   },
