@@ -58,11 +58,11 @@ const questionsdata = [
   {
     id: '',
     title: 'Where in an HTML document is the correct place to refer to an external style sheet?',
-    choiceA:‘In the <body> section’,
-    choiceB:'In the<head> section',
-    choiceC:'At the end of the document is',
-    choiceD: null,
-    correct_answer:'choiceB',
+    choiceA:  ‘In the <body> section’,
+    choiceB:  'In the <head> section',
+    choiceC:  'At the end of the document',
+    choiceD:  null,
+    correct_answer: 'choiceB',
     subject_id:
   },
 
