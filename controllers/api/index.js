@@ -5,7 +5,7 @@ const questionRoutes = require('./question-routes');
 const subjectRoutes = require('./subject-routes');
 
 
-router.use('/instructor', instructorRoutes);
+router.use('/instructors', instructorRoutes);
 router.use('/questions', questionRoutes);
 router.use('/subjects', subjectRoutes);
 

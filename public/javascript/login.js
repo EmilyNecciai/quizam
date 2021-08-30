@@ -5,7 +5,7 @@ async function loginFormHandler(event) {
     const password = document.querySelector('#password').value.trim();
   
     if (email && password) {
-      const response = await fetch('/api/instructor/login', {
+      const response = await fetch('/api/instructors/login', {
         method: 'post',
         body: JSON.stringify({
           email,
@@ -30,7 +30,7 @@ async function loginFormHandler(event) {
     const password = document.querySelector('#password').value.trim();
   
     if (name && email && password) {
-      const response = await fetch('/api/instructor', {
+      const response = await fetch('/api/instructors', {
         method: 'post',
         body: JSON.stringify({
           name,

@@ -5,7 +5,7 @@ const withAuth = require("../../utils/auth");
 // get all Subjects
 router.get("/", (req, res) => {
   Subject.findAll({
-    attributes: ["id", "name", "subject_id"],
+    attributes: ["id", "name"],
     include: [
       {
         model: Instructor,
@@ -39,7 +39,7 @@ router.get("/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: ["id", "name", "subject_id"],
+    attributes: ["id", "name"],
     include: [
       {
         model: Instructor,

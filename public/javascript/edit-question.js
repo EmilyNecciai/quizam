@@ -7,7 +7,7 @@ async function editFormHandler(event) {
     const choiceB = document.querySelector('input[name="answerB"]').value;
     const choiceC = document.querySelector('input[name="answerC"]').value;
     const choiceD = document.querySelector('input[name="answerD"]').value;
-    // const subject_id = document.querySelector('input[name="subject"]').value;
+    const subject_id = document.querySelector('input[name="subject"]').value;
 
     const id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
@@ -22,8 +22,8 @@ async function editFormHandler(event) {
         choiceB,
         choiceC,
         choiceD
-        // ,
-        // subject_id
+        ,
+        subject_id
       }),
       headers: {
         'Content-Type': 'application/json'
