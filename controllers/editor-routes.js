@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { Instructor, Subject, Question } = require("../models");
-const withAuth = require("../../utils/auth");
+const withAuth = require("../utils/auth");
 
 // get all Questions
 router.get("/", withAuth, (req, res) => {
@@ -22,7 +22,7 @@ router.get("/", withAuth, (req, res) => {
       },
       {
         model: Subject,
-        attributes: ["id", "name", "subject_id"],
+        attributes: ["id", "name"],
       },
     ],
   })
@@ -56,7 +56,7 @@ router.get("/:id", withAuth, (req, res) => {
       },
       {
         model: Subject,
-        attributes: ["id", "name", "subject_id"],
+        attributes: ["id", "name"],
       },
     ],
   })

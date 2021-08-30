@@ -13,7 +13,7 @@ router.get("/", withAuth, (req, res) => {
       "choiceB",
       "choiceC",
       "choiceD",
-      "subject_id",
+      "subject_id"
     ],
     include: [
       {
@@ -22,7 +22,7 @@ router.get("/", withAuth, (req, res) => {
       },
       {
         model: Subject,
-        attributes: ["id", "name", "subject_id"],
+        attributes: ["id", "name"],
       },
     ],
   })
@@ -56,7 +56,7 @@ router.get("/:id", withAuth, (req, res) => {
       },
       {
         model: Subject,
-        attributes: ["id", "name", "subject_id"],
+        attributes: ["id", "name"],
       },
     ],
   })
