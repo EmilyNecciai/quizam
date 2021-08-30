@@ -8,7 +8,7 @@ router.get("/", withAuth, (req, res) => {
     where: {
       user_id: req.session.user_id,
     },
-    attributes: ["id", "name", "subject_id"],
+    attributes: ["id", "name"],
     include: [
       {
         model: Instructor,
@@ -29,7 +29,11 @@ router.get("/", withAuth, (req, res) => {
       },
     ],
   })
-    .then((dbSubjectData) => res.json(dbSubjectData))
+    .then((dbSubjectData) => {
+      const subject = dbSubjectData.map(subject => subject.get({plain:true}));
+      res.render('dashboard',{subject, loggedIn: false});
+      // res.json(dbSubjectData)
+    })
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
@@ -42,7 +46,7 @@ router.get("/:id", withAuth, (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: ["id", "name", "subject_id"],
+    attributes: ["id", "name"],
     include: [
       {
         model: Instructor,
@@ -58,7 +62,7 @@ router.get("/:id", withAuth, (req, res) => {
           "choiceB",
           "choiceC",
           "choiceD",
-          "subject_id",
+          "subject_id"
         ],
       },
     ],

@@ -3,7 +3,7 @@ async function newFormHandler(event) {
   
     const name = document.querySelector('input[name="subject-name"]').value;
   
-    const response = await fetch(`/api/posts`, {
+    const response = await fetch(`/api/subjects`, {
       method: 'POST',
       body: JSON.stringify({
         name
@@ -14,7 +14,7 @@ async function newFormHandler(event) {
     });
   
     if (response.ok) {
-      document.location.replace('/dashboard');
+      document.location.replace('/');
     } else {
       alert(response.statusText);
     }

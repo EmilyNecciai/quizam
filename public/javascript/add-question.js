@@ -7,7 +7,7 @@ async function newFormHandler(event) {
     const choiceB = document.querySelector('input[name="answerB"]').value;
     const choiceC = document.querySelector('input[name="answerC"]').value;
     const choiceD = document.querySelector('input[name="answerD"]').value;
-    // const subject_id = document.querySelector('input[name="subject"]').value;
+    const subject_id = document.querySelector('input[name="subject"]').value;
 
     const response = await fetch(`/api/posts`, {
       method: 'POST',
@@ -17,9 +17,8 @@ async function newFormHandler(event) {
         choiceA,
         choiceB,
         choiceC,
-        choiceD
-        // ,
-        // subject_id
+        choiceD,
+        subject_id
       }),
       headers: {
         'Content-Type': 'application/json'
@@ -27,7 +26,7 @@ async function newFormHandler(event) {
     });
   
     if (response.ok) {
-      document.location.replace('/dashboard');
+      document.location.replace('/');
     } else {
       alert(response.statusText);
     }

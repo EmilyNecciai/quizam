@@ -1,33 +1,25 @@
-const sequelize = require('../config/connection');
-const { subject, Question } = require('../models');
+const sequelize = require("../config/connection");
+const { Subject } = require("../models");
 
 const subjectdata = [
   {
-    id: ''
-    name: 'HTML',
-    question_id: '',
-    instructor_id: ''
-  },
-
-
-  {
-    id: '',
-    name: 'CSS',
-    question_id:''
-    instructor_id: ''
+    name: "HTML",
+    instructor_id: "1",
   },
 
   {
-    id: ''
-    name: 'JavaScript',
-    question_id: '',
-    instructor_id: ''
+    name: "CSS",
+    instructor_id: "2",
   },
 
-{...}
-// Test
+  {
+    name: "JavaScript",
+    instructor_id: "3",
+  },
 ];
 
-const seedSubject = () => User.bulkCreate(subjectdata, {individualHooks: true});
+const seedSubject = () =>
+  Subject.bulkCreate(subjectdata, { individualHooks: true });
 
-module.exports = seedSubject;/placeholder seed file.
+module.exports = seedSubject;
+//placeholder seed file.

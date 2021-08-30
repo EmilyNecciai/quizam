@@ -5,11 +5,11 @@ const withAuth = require("../../utils/auth");
 // get all Subjects
 router.get("/", (req, res) => {
   Subject.findAll({
-    attributes: ["id", "name", "subject_id"],
+    attributes: ["id", "name","instructor_id"],
     include: [
       {
         model: Instructor,
-        attributes: ["id", "name", "email"],
+        attributes: ["name", "email"],
       },
       {
         model: Question,
@@ -21,12 +21,12 @@ router.get("/", (req, res) => {
           "choiceB",
           "choiceC",
           "choiceD",
-          "subject_id",
+          "subject_id"
         ],
       },
     ],
   })
-    .then((dbSubjectData) => res.json(dbSubjectData))
+    .then(dbSubjectData => res.json(dbSubjectData))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
@@ -39,7 +39,7 @@ router.get("/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: ["id", "name", "subject_id"],
+    attributes: ["id", "name"],
     include: [
       {
         model: Instructor,
@@ -78,7 +78,7 @@ router.post("/", withAuth, (req, res) => {
   // expects {title: 'Math!', instructor_id: 1}
   Subject.create({
     name: req.body.name,
-    instructor_id: req.body.instructor_id
+    instructor_id: req.body.instructor_id,
   })
     .then((dbSubjectData) => res.json(dbSubjectData))
     .catch((err) => {
@@ -86,7 +86,6 @@ router.post("/", withAuth, (req, res) => {
       res.status(500).json(err);
     });
 });
-
 
 // Edit Subject Name
 router.put("/:id", withAuth, (req, res) => {
@@ -112,7 +111,6 @@ router.put("/:id", withAuth, (req, res) => {
       res.status(500).json(err);
     });
 });
-
 
 // Delete Subject
 router.delete("/:id", withAuth, (req, res) => {
