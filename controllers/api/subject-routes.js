@@ -5,11 +5,11 @@ const withAuth = require("../../utils/auth");
 // get all Subjects
 router.get("/", (req, res) => {
   Subject.findAll({
-    attributes: ["id", "name"],
+    attributes: ["id", "name","instructor_id"],
     include: [
       {
         model: Instructor,
-        attributes: ["id", "name", "email"],
+        attributes: ["name", "email"],
       },
       {
         model: Question,
@@ -26,7 +26,7 @@ router.get("/", (req, res) => {
       },
     ],
   })
-    .then((dbSubjectData) => res.json(dbSubjectData))
+    .then(dbSubjectData => res.json(dbSubjectData))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);

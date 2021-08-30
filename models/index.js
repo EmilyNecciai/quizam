@@ -6,17 +6,21 @@ const Question = require('./Question');
 // create associations
 Instructor.hasMany(Subject, {
   foreignKey: 'instructor_id',
-  onDelete: 'CASCADE'
+  // onDelete: 'CASCADE'
 });
+
+Subject.belongsTo(Instructor,{
+  foreignKey:'instructor_id',
+})
 
 Subject.hasMany(Question, {
   foreignKey: 'subject_id',
-  onDelete: 'CASCADE'
+  // onDelete: 'CASCADE'
 });
 
 Question.belongsTo(Subject, {
   foreignKey: 'question_id',
-  onDelete: 'CASCADE'
+  // onDelete: 'CASCADE'
 });
 
 // export

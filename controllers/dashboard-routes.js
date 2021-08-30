@@ -29,7 +29,11 @@ router.get("/", withAuth, (req, res) => {
       },
     ],
   })
-    .then((dbSubjectData) => res.json(dbSubjectData))
+    .then((dbSubjectData) => {
+      const subject = dbSubjectData.map(subject => subject.get({plain:true}));
+      res.render('dashboard',{subject, loggedIn: false});
+      // res.json(dbSubjectData)
+    })
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
