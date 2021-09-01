@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content ="width="device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link rel="shortcut icon" type="image/jpg" href="../images/logo.png" />
 
@@ -15,113 +15,88 @@
     />
 
     <!---Materialized-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
 
-       <!---Bootstrap-->
-       <link
-       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
-       rel="stylesheet"
-     />
+    <!---Bulma-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+
+    <!---Bootstrap-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
     <!----------LOCAL STYLESHEET-->
     <link rel="stylesheet" href="../stylesheets/style.css" />
-    
 
     <title>QUIZZAM</title>
-
-    
   </head>
 
-    <body>
-        <header>
-        <h1>Quiz<img class="logo" src="../images/logo1.png"/>am</h1>
-        </header>
+  <body>
+    <header>
+      <h1>Quiz<img class="logo" src="../images/logo1.png" />am</h1>
+    </header>
 
-        <nav>
-            <div class="nav-wrapper">
-              <ul id="nav-mobile" class="left hide-on-med-and-down brand-logo center">
-                  <!--home dashboard page-->
-                <li><a href="dashboard.html">HOME</a></li>
-                <!------->
-                <li><a href="">ABOUT US</a></li>
-                <!--how to get started/how to use application-->
-                <li><a href="">DOCUMENTATION</a></li>
-                <!---Contact us section-->
-                <li><a href="">CONTACT US</a></li>
-                <!--Log OUT-->
-                <li><a href="">LOG OUT</a></li>
-              </ul>
+    <nav>
+      <div class="nav-wrapper">
+        <ul id="nav-mobile" class="left hide-on-med-and-down brand-logo center">
+          <!--home dashboard page-->
+          <li><a href="dashboard.html">HOME</a></li>
+          <!------->
+          <li><a href="">ABOUT US</a></li>
+          <!--how to get started/how to use application-->
+          <li><a href="">DOCUMENTATION</a></li>
+          <!---Contact us section-->
+          <li><a href="">CONTACT US</a></li>
+          <!--Log OUT-->
+          <li><a href="">LOG OUT</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <div class="container is-fluid">
+        <div class="columns is-mobile">
+          <div class="column is-mobile dash-button">
+            <div class="column is-mobile">
+              <button class="button is-warning is-large">
+                  <h2>Create an Exam</h2>
+              </button>
             </div>
-          </nav>
+            <div class="column is-mobile">
+              <button class="button is-warning is-large">
+                <h2>Edit Exam</h2>
+              </button>
+            </div>
+          </div>
+          <div class="column is-mobile dash-button">
+            <div class="column is-mobile">
+              <button class="button is-warning is-large">
+                <h2>Edit Subject</h2>
+              </button>
+            </div>
+            <div class="column is-mobile">
+              <button class="button is-warning is-large">
+                <h2>Create PDF File</h2>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
 
-        <main>
-            <div class="container">
-                <div class="row">
-                    <div>
-                        <h2>Class:</h2>
-                    </div>
-                    <div>
-                        <input type="text" class="form-control" placeholder="What is the the subject for your questions">
-                    </div>
-                    <div class"question-header">
-                       <h2>QUESTIONS:</h2>
-                    </div>
-                    <div class="input-group-text mb-3">
-                        <input type="text" class="form-control" placeholder="Type your question here"> 
-                    </div>
-                    <div class="card col-xl-auto ">Choice A:</div>
-                    <div class="card col-xl-auto input-group-text mb-3">
-                        <input type="text" class="form-control">Answer A goes here
-                    </div>
-                    <div class="w-100"></div>
-                    <div class=" card col-xl-auto">Choice B:</div>
-                    <div class="card col-xl-auto">
-                        <input type="text" class="form-control">
-                        Answer  B goes here
-                    </div>
-                    <div class="w-100"></div>
-                    <div class="card col-xl-auto">Choice C: </div>
-                    <div class="card col-xl-auto">
-                        <input type="text" class="form-control">
-                        Answer  C goes here
-                    </div>
-                    <div class="w-100"></div>
-                    <div class="card col-xl-auto">Choice D:</div>
-                    <div class="card col-xl-auto">
-                        <input type="text" class="form-control">
-                        Answer  D goes here
-                    </div>
-                    <div class="w-100"></div>
-                    <div class="card col-xl-auto">Correct Answer:</div>
-                    <div class="card col-xl-auto">
-                        <input type="text" class="form-control">
-                        Correct Answer goes here
-                    </div>
-                    <div class="">
-                        Add another question
-                    </div>
-                    <div class="">
-                        Edit questions
-                    </div>
-                    <div class="">
-                        SUBMIT BUTTON HERE
-                    </div>
-                </div>
-              </div>
-        </main>
+    <br>
+    <br>
+    <br>
 
-        
-
-        <footer>
-        <h5>
-            Powered by: Quizzam Inc. &copy; 2021
-        </h5> 
-        </footer>
-
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    </body>
+    <footer>
+      <h5>Powered by: Quizzam Inc. &copy; 2021</h5>
+    </footer>
+  </body>
 </html>
-
-
-
