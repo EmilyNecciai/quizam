@@ -3,7 +3,7 @@ const { Instructor, Subject, Question } = require("../models");
 const withAuth = require("../utils/auth");
 
 // get all Subjects
-router.get("/", withAuth, (req, res) => {
+router.get("/",withAuth, (req, res) => {
   Subject.findAll({
     where: {
       user_id: req.session.user_id,
