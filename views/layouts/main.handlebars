@@ -2,40 +2,100 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quizam: Build you own quiz.</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
-  <link rel="stylesheet" href="/stylesheets/style.css">
-  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/jpg" href="../images/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="../../public/stylesheets/style.css" />
+
+    <title>QUIZZAM</title>
+
 </head>
 
-  <div class="wrapper">
-    <header>
-        <h1 class="has-text-black px-3 py-3 has-text-weight-bold">Quizam: Build you own quiz.</h1>
-        <nav class="navbar mt-2">
-            {{#if loggedIn}}
-            <a href="/" class="navbar-item is-hoverable pt-1">homepage</a>
-            <a href="/dashboard" class="navbar-item is-hoverable pt-1">dashboard</a>
-            <a href="/dashboard/create/" class="navbar-item is-hoverable pt-1 mr-4">create post</a>
-            <button id="logout" class="button is-danger">logout</button>
-            {{else}}
-            <a href="/login" class="navbar-item button is-primary">Login</a>
-            <a href="/signup" class="navbar-item button is-primary">Sign Up</a>
-            {{/if}}
-        </nav>
-    </header>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://quizam.herokuapp.com/">
+            <span>Quiz</span>
+            <img src="../../public/images/logo1.png" width="28" height="28">
+            <span>am</span>
+        </a>
 
-    <main>
-            {{{ body }}}
-    </main>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+            <a href="/" class="navbar-item">
+                Home
+            </a>
+
+            <a href="/dashboard" class="navbar-item">
+                Dashboard
+            </a>
+
+            <a href="/documentation" class="navbar-item">
+                Documentation
+            </a>
+
+            <a href="/about-us" class="navbar-item">
+                About Us
+            </a>
 
 
-  </div>
+        </div>
+    </div>
+
+    <div class="navbar-end">
+        <div class="navbar-item">
+            <div class="buttons">
+
+                {{#if loggedIn}}
+                <a id="logout" class="button is-light">
+                    Log Out
+                </a>
+                {{else}}
+
+                <a href="/login" class="button is-light">
+                    Log In or Create Account
+                </a>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+    </div>
+
+</nav>
+
+<body>
+
+    {{{ body }}}
+
+</body>
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <h4 style="text-align: center;">
+            Powered by: Quizzam Inc. &copy; 2021
+        </h4>
+    </div>
+</footer>
+
 
 {{#if loggedIn}}
-<script src="/javascript/logout.js"></script>
+<script src="/public/javascript/logout.js"></script>
+{{else}}
+<script src="/public/javascript/login.js"></script>
+<script src="/public/javascript/signup.js"></script>
 {{/if}}
-</body>
+
+
+<script src="/public/javascript/menu-burger.js"></script>
 
 </html>

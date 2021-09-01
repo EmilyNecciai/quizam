@@ -7,10 +7,10 @@ const editorRoutes = require('./editor-routes.js')
 const homeRoutes = require('./home-routes.js')
 
 
-router.use('/api', apiRoutes);
 router.use('/dashboard', dashboardRoutes);
 router.use('/pdf', pdfRoutes);
 router.use('/editor', editorRoutes);
 router.use('/',homeRoutes)
+
 
 module.exports = router;

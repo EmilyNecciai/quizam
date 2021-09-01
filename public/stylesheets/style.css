@@ -12,11 +12,15 @@ h1 {
   width: 100%;
   text-align: center;
   background-color: var(--first);
-  font-size: 180px ;
+  font-size: 180px;
 }
 
-nav {
+/* nav {
   margin-top:40px;
+} */
+
+.navbar {
+  background-color: var(--first);
 }
 
 body {
@@ -50,15 +54,27 @@ body {
 }
 
 form {
-align-items: center;
+  align-items: center;
 }
 
 .container {
   margin-top: 50px;
 }
 
-.btn {
-  margin-bottom: 20px;
+.dash-button {
+  align-items: center;
+  margin-bottom: 50px;
+  margin-left: 30px;
+}
+
+.dashBtn1 {
+  text-align: right;
+}
+
+.button-dash {
+  height: 200px;
+  width: 500px;
+  
 }
 
 .login-button {
@@ -66,37 +82,56 @@ align-items: center;
 }
 
 .email-container {
-  margin-bottom:20px;
+  margin-bottom: 20px;
 }
 
-.loginBtn-container, .signUp-button {
- text-align: center;
+.loginBtn-container,
+.signUp-button {
+  text-align: center;
 }
 
-.login-button, .signUp {
+.login-button,
+.signUp {
   width: 100%;
+}
+
+.is-yellow {
+  background-color: var(--second);
 }
 
 h3 {
   margin-left: 30px;
-  color: var(--fifth)
+  color: var(--fifth);
 }
 
-footer {
+.footer {
  background-color: var(--second);
  width: 100%;
  padding-bottom: 3px;
  padding-top: 5px;
+
+  
+.button-questions {
+  margin: 50px;
+  text-align: center;
 }
 
+.nextQuestionButton {
+  margin-top: 50px;
+  text-align: center;
+}
 
+.questionBtn {
+  margin: 0px 100px;
+}
 
+.dropdownMenu {
+  width: 100%;
+}
 
-
-
-
-
-
-
-
-
+footer {
+  background-color: var(--second);
+  width: 100%;
+  padding-bottom: 3px;
+  padding-top: 5px;
+}
