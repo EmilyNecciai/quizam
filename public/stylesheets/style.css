@@ -12,11 +12,11 @@ h1 {
   width: 100%;
   text-align: center;
   background-color: var(--first);
-  font-size: 180px ;
+  font-size: 180px;
 }
 
 nav {
-  margin-top:40px;
+  margin-top: 40px;
 }
 
 body {
@@ -50,7 +50,7 @@ body {
 }
 
 form {
-align-items: center;
+  align-items: center;
 }
 
 .container {
@@ -63,7 +63,7 @@ align-items: center;
   margin-left: 30px;
 }
 
-.button {
+.button-dash {
   height: 200px;
   width: 500px;
 }
@@ -73,37 +73,45 @@ align-items: center;
 }
 
 .email-container {
-  margin-bottom:20px;
+  margin-bottom: 20px;
 }
 
-.loginBtn-container, .signUp-button {
- text-align: center;
+.loginBtn-container,
+.signUp-button {
+  text-align: center;
 }
 
-.login-button, .signUp {
+.login-button,
+.signUp {
   width: 100%;
 }
 
 h3 {
   margin-left: 30px;
-  color: var(--fifth)
+  color: var(--fifth);
+}
+
+.button-questions {
+  margin: 50px;
+  text-align: center;
+}
+
+.nextQuestionButton {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.questionBtn {
+  margin: 0px 100px;
+}
+
+.dropdownMenu {
+  width: 100%;
 }
 
 footer {
- background-color: var(--second);
- width: 100%;
- padding-bottom: 3px;
- padding-top: 5px;
+  background-color: var(--second);
+  width: 100%;
+  padding-bottom: 3px;
+  padding-top: 5px;
 }
-
-
-
-
-
-
-
-
-
-
-
-

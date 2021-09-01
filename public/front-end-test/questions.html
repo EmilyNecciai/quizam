@@ -14,10 +14,14 @@
       rel="stylesheet"
     />
 
-    <!---Materialized-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
+    <!---Bulma-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
 
-       <!---Bootstrap-->
+       <!----Bootstrap---->
        <link
        href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
        rel="stylesheet"
@@ -58,54 +62,66 @@
             <div class="container">
                 <div class="row">
                     <div>
-                        <h2>Class:</h2>
+                        <h4>Class/Subject:</h4>
                     </div>
+                    <div class="control">
+                        <input class="input is-hovered" type="text" placeholder="Class/Subject">
+                    </div>
+                    <div class="question-header">
+                        <h4>Questions:</h4>
+                    </div>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Text input">
+                    </div>
+                    <div class="control">
+                        <h4>Choice A:</h4>
+                    </div>
+                    <div class="control">
+                        <input type="text" class="input" placeholder="Answer goes here">
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="control">
+                        <h4>Choice B:</h4>
+                    </div>
+                    <div class="Control">
+                        <input type="text" class="input" placeholder="Answer goes here">
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="control">
+                        <h4>Choice C:</h4>
+                    </div>
+                    <div class="control">
+                        <input type="text" class="input" placeholder="Answer goes here">
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="control">
+                        <h4>Choice D:</h4>
+                    </div>
+                    <div class="control">
+                        <input type="text" class="input" placeholder="Answer goes here">
+                    </div>
+                    <div class="w-100"></div>
                     <div>
-                        <input type="text" class="form-control" placeholder="What is the the subject for your questions">
+                        <h4>Correct Answer:</h4>
                     </div>
-                    <div class"question-header">
-                       <h2>QUESTIONS:</h2>
+                    <div class="select">
+                        <select class="dropdownMenu">
+                          <option>Select dropdown</option>
+                          <option>Choice A</option>
+                          <option>Choice B</option>
+                          <option>Choice C</option>
+                          <option>Choice D</option>
+                        </select>
+                      </div>
+                    <div class="nextQuestionButton">
+                        <input class="button questionBtn" type="reset" value="Reset Question">
+                        <input class="button questionBtn" type="submit" value="Submit Questions">
+                        <button class="button questionBtn">Next Question</button>
                     </div>
-                    <div class="input-group-text mb-3">
-                        <input type="text" class="form-control" placeholder="Type your question here"> 
+                    <div class="button-questions">
+                        
                     </div>
-                    <div class="card col-xl-auto ">Choice A:</div>
-                    <div class="card col-xl-auto input-group-text mb-3">
-                        <input type="text" class="form-control">Answer A goes here
-                    </div>
-                    <div class="w-100"></div>
-                    <div class=" card col-xl-auto">Choice B:</div>
-                    <div class="card col-xl-auto">
-                        <input type="text" class="form-control">
-                        Answer  B goes here
-                    </div>
-                    <div class="w-100"></div>
-                    <div class="card col-xl-auto">Choice C: </div>
-                    <div class="card col-xl-auto">
-                        <input type="text" class="form-control">
-                        Answer  C goes here
-                    </div>
-                    <div class="w-100"></div>
-                    <div class="card col-xl-auto">Choice D:</div>
-                    <div class="card col-xl-auto">
-                        <input type="text" class="form-control">
-                        Answer  D goes here
-                    </div>
-                    <div class="w-100"></div>
-                    <div class="card col-xl-auto">Correct Answer:</div>
-                    <div class="card col-xl-auto">
-                        <input type="text" class="form-control">
-                        Correct Answer goes here
-                    </div>
-                    <div class="">
-                        Add another question
-                    </div>
-                    <div class="">
-                        Edit questions
-                    </div>
-                    <div class="">
-                        SUBMIT BUTTON HERE
-                    </div>
+
                 </div>
               </div>
         </main>
