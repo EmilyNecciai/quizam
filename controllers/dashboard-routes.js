@@ -31,7 +31,7 @@ router.get("/", withAuth, (req, res) => {
   })
     .then((dbSubjectData) => {
       const subject = dbSubjectData.map(subject => subject.get({plain:true}));
-      res.render('home',{subject, loggedIn: false});
+      res.render('dashboard',{subject, loggedIn: false});
       // res.json(dbSubjectData)
     })
     .catch((err) => {
@@ -80,16 +80,6 @@ router.get("/:id", withAuth, (req, res) => {
     });
 });
 
-//login 
-
-router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
-
-  res.render('login');
-});
 
 
 
