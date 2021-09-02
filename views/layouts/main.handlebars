@@ -1,41 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quizam: Build you own quiz.</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
-  <link rel="stylesheet" href="/stylesheets/style.css">
-  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-</head>
+    <link rel="shortcut icon" type="image/jpg" href="../images/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap"
+      rel="stylesheet"
+    />
 
-  <div class="wrapper">
+    <!---Materialized-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    <!---Bulma-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+
+    <!---Bootstrap-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../stylesheets/style.css" />
+
+    <title>QUIZZAM</title>
+  </head>
+
+  <body>
     <header>
-        <h1 class="has-text-black px-3 py-3 has-text-weight-bold">Quizam: Build you own quiz.</h1>
-        <nav class="navbar mt-2">
-            {{#if loggedIn}}
-            <a href="/" class="navbar-item is-hoverable pt-1">homepage</a>
-            <a href="/dashboard" class="navbar-item is-hoverable pt-1">dashboard</a>
-            <a href="/dashboard/create/" class="navbar-item is-hoverable pt-1 mr-4">create post</a>
-            <button id="logout" class="button is-danger">logout</button>
-            {{else}}
-            <a href="/login" class="navbar-item button is-primary">Login</a>
-            <a href="/signup" class="navbar-item button is-primary">Sign Up</a>
-            {{/if}}
-        </nav>
+      <h1>Quiz<img class="logo" src="../images/logo1.png" />am: Build Your Own Quiz.</h1>
     </header>
 
+    <nav>
+      <div class="nav-wrapper">
+       {{#if loggedIn}}
+        <ul id="nav-mobile" class="left hide-on-med-and-down brand-logo center">
+          <!--home dashboard page-->
+          <li><a href="/dashboard">HOME</a></li>
+          <li><a href="">ABOUT US</a></li>
+          <!--how to get started/how to use application-->
+          <li><a href="">DOCUMENTATION</a></li>
+          <!---Contact us section-->
+          <li><a href="">CONTACT US</a></li>
+          <!--Log out-->  
+          <li><a id="logout">LOG OUT</a></li><!--Log out need to edit, it does not need a href. Just in JS, add event to log out-->
+        </ul>
+        {{else}}
+        <ul id="nav-mobile" class="left hide-on-med-and-down brand-logo center">
+          <li><a href="/">HOME</a></li>
+          <li><a href="">ABOUT US</a></li>
+          <!--how to get started/how to use application-->
+          <li><a href="">DOCUMENTATION</a></li>
+          <!---Contact us section-->
+          <li><a href="">CONTACT US</a></li>
+          <!--Log OUT-->
+          <li><a href="/login">LOG IN</a></li>
+          {{!-- Sign Up --}}
+          <li><a href="/signup">SIGN UP</a></li> 
+        {{/if}}
+      </div>
+    </nav>
+
     <main>
-            {{{ body }}}
+      {{{body}}}
     </main>
+    <br />
+    <br />
+    <br />
 
+    <footer>
+      <h5>Powered by: Quizzam Inc. &copy; 2021</h5>
+    </footer>
 
-  </div>
-
-{{#if loggedIn}}
-<script src="/javascript/logout.js"></script>
-{{/if}}
-</body>
-
+  {{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
+  {{/if}}
+  </body>
 </html>

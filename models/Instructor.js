@@ -46,7 +46,7 @@ Instructor.init(
           10
         );
         return updatedInstructor;
-      },
+      }
     },
 
     // pass in our imported sequelize connection (the direct connection to our database)
