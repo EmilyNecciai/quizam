@@ -1,5 +1,4 @@
-<main>
-      <div class="container is-fluid">
+     {{!-- <div class="container is-fluid">
         <div class="columns is-mobile">
           <div class="column dash-button is-half">
             <div class="column">
@@ -26,5 +25,16 @@
             </div>
           </div>
         </div>
-      </div>               
- </main>
+      </div>                --}}
+{{#if subjects.length}}
+<section>
+  <h2>Your Subjects</h2>
+  <ol>
+    {{#each subjects as |subject|}}
+    <li>
+      {{> subject-info subject}}
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
