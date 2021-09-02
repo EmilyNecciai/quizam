@@ -1,0 +1,94 @@
+{{#each question}}
+
+<div class="container">
+  <div class="row">
+    <div>
+      <h4>
+        Class/Subject:
+      </h4>
+    </div>
+    <div class="control">
+      <input class="input is-hovered" type="text" placeholder="Class/Subject" value="{{subject}}"/>
+    </div>
+    <div class="question-header">
+      <h4>
+        Questions:
+      </h4>
+    </div>
+    <div class="control">
+      <input class="input" type="text" placeholder="Text input" value="{{question-title}}"/>
+    </div>
+    <div class="control">
+      <h4>
+        Choice A:
+      </h4>
+    </div>
+    <div class="control">
+      <input type="text" class="input" placeholder="Answer goes here" value="{{answerA}}" />
+    </div>
+    <div class="w-100"></div>
+    <div class="control">
+      <h4>
+        Choice B:
+      </h4>
+    </div>
+    <div class="Control">
+      <input type="text" class="input" placeholder="Answer goes here" value="{{answerB}}" />
+    </div>
+    <div class="w-100"></div>
+    <div class="control">
+      <h4>
+        Choice C:
+      </h4>
+    </div>
+    <div class="control">
+      <input type="text" class="input" placeholder="Answer goes here" value="{{answerC}}"/>
+    </div>
+    <div class="w-100"></div>
+    <div class="control">
+      <h4>
+        Choice D:
+      </h4>
+    </div>
+    <div class="control">
+      <input type="text" class="input" placeholder="Answer goes here" value="{{answerD}}" />
+    </div>
+    <div class="w-100"></div>
+    <div>
+      <h4>
+        Correct Answer:
+      </h4>
+    </div>
+    <div class="select">
+      <select class="dropdownMenu" value="{{question-correct}}">
+        <option>
+          Select dropdown
+        </option>
+        <option>
+          Choice A
+        </option>
+        <option>
+          Choice B
+        </option>
+        <option>
+          Choice C
+        </option>
+        <option>
+          Choice D
+        </option>
+      </select>
+    </div>
+    <div class="nextQuestionButton">
+      <input
+        class="button questionBtn"
+        type="submit"
+        value="Submit Questions" 
+        id="new-question-form"
+      />
+      <button class="button questionBtn" id="nextbtn">
+        Next Question
+      </button>
+    </div>
+    <div class="button-questions"></div>
+  </div>
+</div>
