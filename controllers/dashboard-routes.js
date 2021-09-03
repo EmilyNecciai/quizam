@@ -7,7 +7,7 @@ router.get("/",withAuth, (req, res) => {
   console.log(req.session)
   Subject.findAll({
     where: {
-      id: req.session.id,
+      instructor_id: req.session.user_id,
     },
     attributes: ["id", "name"],
     include: [
@@ -41,11 +41,13 @@ router.get("/",withAuth, (req, res) => {
     });
 });
 
-// Find Specific Subject
-router.get("/:id", withAuth, (req, res) => {
-  Subject.findOne({
+
+
+router.get("/subjects",withAuth, (req, res) => {
+  console.log(req.session)
+  Subject.findAll({
     where: {
-      id: req.params.id,
+      instructor_id: req.session.user_id,
     },
     attributes: ["id", "name"],
     include: [
@@ -63,17 +65,14 @@ router.get("/:id", withAuth, (req, res) => {
           "choiceB",
           "choiceC",
           "choiceD",
-          "subject_id"
+          "subject_id",
         ],
       },
     ],
   })
     .then((dbSubjectData) => {
-      if (!dbSubjectData) {
-        res.status(404).json({ message: "No subject found with this id" });
-        return;
-      }
-      res.json(dbSubjectData);
+      const subjects = dbSubjectData.map(subject => subject.get({plain:true}));
+      res.render('subjects',{subjects, loggedIn: true});
     })
     .catch((err) => {
       console.log(err);
@@ -81,80 +80,44 @@ router.get("/:id", withAuth, (req, res) => {
     });
 });
 
-
-
-
-
-// get all Questions
-// router.get("/", withAuth, (req, res) => {
-//   Question.findAll({
-//     attributes: [
-//       "id",
-//       "title",
-//       "correct_answer",
-//       "choiceA",
-//       "choiceB",
-//       "choiceC",
-//       "choiceD",
-//       "subject_id",
-//     ],
-//     include: [
-//       {
-//         model: Instructor,
-//         attributes: ["id", "name", "email"],
-//       },
-//       {
-//         model: Subject,
-//         attributes: ["id", "name"],
-//       },
-//     ],
-//   })
-//     .then((dbQuestionData) => res.json(dbQuestionData))
-//     .catch((err) => {
-//       console.log(err);
-//       res.status(500).json(err);
-//     });
-// });
-
-// //Find Specific Question
-// router.get("/:id", withAuth, (req, res) => {
-//   Question.findOne({
-//     where: {
-//       id: req.params.id,
-//     },
-//     attributes: [
-//       "id",
-//       "title",
-//       "correct_answer",
-//       "choiceA",
-//       "choiceB",
-//       "choiceC",
-//       "choiceD",
-//       "subject_id",
-//     ],
-//     include: [
-//       {
-//         model: Instructor,
-//         attributes: ["id", "name", "email"],
-//       },
-//       {
-//         model: Subject,
-//         attributes: ["id", "name"],
-//       },
-//     ],
-//   })
-//     .then((dbQuestionData) => {
-//       if (!dbQuestionData) {
-//         res.status(404).json({ message: "No question found with this id" });
-//         return;
-//       }
-//       res.json(dbQuestionData);
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//       res.status(500).json(err);
-//     });
-// });
+router.get('/addsubject',withAuth,(req,res)=>{
+  Subject.findAll({
+    where:{
+      instructor_id:req.session.user_id
+    },
+    attributes:[
+      'id',
+      'name',
+      'created_at'
+    ],
+    include:[
+      {
+        model:Question,
+        attributes: [
+          "id",
+          "title",
+          "correct_answer",
+          "choiceA",
+          "choiceB",
+          "choiceC",
+          "choiceD",
+          "subject_id"
+        ],
+      },{
+        model:Instructor,
+        attributes:['name']
+      }
+    ]
+  })
+  .then(dbSubjectData => {
+    const subjects = dbSubjectData.map(subject => subject.get({ plain: true }));
+    res.render('add-subject', {subjects, loggedIn: true });
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+});
 
 module.exports = router;
 

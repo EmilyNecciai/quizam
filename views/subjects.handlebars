@@ -1,0 +1,20 @@
+<div class="container is-fluid">
+        <a href=""><button id="create-post" class="btn btn-warning login-button">Add Subjects</button></a>
+        
+        <h2 class="title pb-4">dashboard: your subjects</h2><hr>
+</div>
+{{#if subjects.length}}
+
+<ol>
+    {{#each subjects as |subject|}}
+        {{!-- {{> subject-info subject}} --}}
+    <li>
+        <p>Subject test no info</p>
+    </li>
+            {{!-- <a href=""><button class="container">edit subject</button></a> --}}
+    {{/each}}
+</ol>
+{{!-- {{else}} --}}
+{{!-- <h6>you do not currently have any posts</h6> --}}
+
+{{/if}}

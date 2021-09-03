@@ -63,7 +63,7 @@ router.post("/", (req, res) => {
   })
     .then((dbInstructorData) => {
       req.session.save(() => {
-        req.session.id = dbInstructorData.id;
+        req.session.user_id = dbInstructorData.id;
         req.session.name = dbInstructorData.name;
         req.session.loggedIn = true;
 
@@ -78,7 +78,8 @@ router.post("/", (req, res) => {
 
 //Log In
 router.post("/login", (req, res) => {
-  // expects {email: 'enmayeski@gmail.com', password: 'password1234'}
+  // expects {email: 'enmayeski@gmail.com', password: 'password1234'} 
+  console.log(req.session.user_id)
   Instructor.findOne({
     where: {
       email: req.body.email,
@@ -99,7 +100,7 @@ router.post("/login", (req, res) => {
     }
 
     req.session.save(() => {
-      req.session.id = dbInstructorData.id;
+      req.session.user_id = dbInstructorData.id;
       req.session.name = dbInstructorData.name;
       req.session.loggedIn = true;
 

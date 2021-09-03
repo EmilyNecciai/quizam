@@ -1,8 +1,11 @@
 async function newFormHandler(event) {
     event.preventDefault();
   
-    const name = document.querySelector('input[name="subject-name"]').value;
-  
+    const name = document.querySelector('#subject-name').value.trim();
+     
+    
+
+    if(name){
     const response = await fetch(`/api/subjects`, {
       method: 'POST',
       body: JSON.stringify({
@@ -14,11 +17,11 @@ async function newFormHandler(event) {
     });
   
     if (response.ok) {
-      document.location.replace('/');
+      document.location.replace('/dashboard/');
     } else {
       alert(response.statusText);
     }
   }
-  
-  document.querySelector('.new-subject-form').addEventListener('submit', newFormHandler);
+}
+  document.querySelector('#add-subject').addEventListener('submit', newFormHandler);
   
