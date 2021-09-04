@@ -35,11 +35,11 @@
   </head>
 
   <body>
-    <header>
+    <header id="topheader">
       <h1>Quiz<img class="logo" src="../images/logo1.png" />am: Build Your Own Quiz.</h1>
     </header>
 
-    <nav>
+    <nav id="secondheader">
       <div class="nav-wrapper">
        {{#if loggedIn}}
         <ul id="nav-mobile" class="left hide-on-med-and-down brand-logo center">
@@ -47,7 +47,7 @@
           <li><a href="/dashboard">Dashboard</a></li>
           <li><a href="/dashboard/addsubject">Add Subject</a></li>
           <!--how to get started/how to use application-->
-          <li><a href="">Add Question</a></li>
+          <li><a href="/dashboard/addquestion">Add Question</a></li>
           <!---Contact us section-->
           <li><a href="">CONTACT US</a></li>
           <!--Log out-->  

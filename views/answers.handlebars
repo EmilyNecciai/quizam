@@ -1,0 +1,11 @@
+<div class="container is-fluid">     
+        <h2 class="title pb-4">List: All Created Questions</h2><hr>
+
+{{#if questions.length}}
+<div class="row">
+    {{#each questions as |question|}}
+     {{>answer-info question}}
+    {{/each}}
+</div>
+{{/if}}
+</div>
