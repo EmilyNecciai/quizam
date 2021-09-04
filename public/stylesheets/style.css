@@ -29,7 +29,6 @@ a:hover {
 }
 
 
-
 h1 {
   font-family: "Rampart One", cursive;
   width: 100%;
@@ -45,6 +44,11 @@ h1 {
 
 .navbar, .navbar-dropdown {
   background-color: var(--muted-pink);
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
 }
 
 body {
@@ -91,9 +95,9 @@ form {
   margin-left: 30px;
 }
 
-.dashBtn1 {
+/* .dashBtn1 {
   text-align: right;
-}
+} */
 
 .button-dash {
   height: 200px;
@@ -125,16 +129,19 @@ form {
   background-color: var(--second);
 }
 
+.is-green {
+  background-color: var(--fourth);
+}
+
+
 h3 {
-  margin-left: 30px;
   color: var(--fifth);
 }
 
 .footer {
- background-color: var(--second);
- width: 100%;
- padding-bottom: 3px;
- padding-top: 5px;
+ text-align: center;
+ background-color: var(--muted-pink);
+
 }
   
 

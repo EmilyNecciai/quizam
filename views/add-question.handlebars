@@ -1,77 +1,95 @@
- <div class="container">
-     <form id="add-question">
-                <div class="row">
-                    {{#if subjects.length}}
-                    <div>
-                        <h4>Class/Subject:</h4>
-                    </div>
+<div class="container">
+    <form id="add-question">
+        <div class="row">
+
+            <div class="box m-3">
+                <div class="content is-large">
+                    <h3>Add Question</h3>
+                    <hr>
+                </div>
+
+                {{#if subjects.length}}
+                <div class="">
+                    <h4>Add Question to...</h4>
                     <div class="select">
                         <select class="dropdownMenu" id="subject-choice">
-                            <option>Select Subject</option>
-                         {{#each subjects as |subject|}}
-                         <option value={{subject.id}}>
-                             {{subject.name}}
-                         </option>
-                         {{/each}}
+                            <option>Select Subject or Class</option>
+                            {{#each subjects as |subject|}}
+                            <option value={{subject.id}}>
+                                {{subject.name}}
+                            </option>
+                            {{/each}}
                         </select>
                     </div>
-                    {{/if}}
-                    <div class="question-header">
-                        <h4>Questions:</h4>
-                    </div>
+                </div>
+                {{/if}}
+
+            </div>
+
+
+            <div class="box m-3">
+                <div class="question-header m-3">
+                    <h5>Question:</h5>
                     <div class="control">
-                        <input class="input" id="question-title" type="text" placeholder="Text input">
+                        <input class="input" id="question-title" type="text" placeholder="Your question here.">
                     </div>
+                </div>
+
+                <div class="control m-6">
+                    <h6>Choice A:</h6>
                     <div class="control">
-                        <h4>Choice A:</h4>
+                        <input type="text" id="Choice-A" class="input" placeholder="Write an answer option here.">
                     </div>
-                    <div class="control">
-                        <input type="text" id="Choice-A" class="input" placeholder="Answer goes here">
-                    </div>
-                    <div class="w-100"></div>
-                    <div class="control">
-                        <h4>Choice B:</h4>
-                    </div>
+                </div>
+
+                <div class="control m-6">
+                    <h6>Choice B:</h6>
                     <div class="Control">
-                        <input type="text" id="Choice-B" class="input" placeholder="Answer goes here">
+                        <input type="text" id="Choice-B" class="input" placeholder="Write an answer option here.">
                     </div>
-                    <div class="w-100"></div>
+                </div>
+
+                <div class="control m-6">
+                    <h6>Choice C:</h6>
                     <div class="control">
-                        <h4>Choice C:</h4>
+                        <input type="text" id="Choice-C" class="input" placeholder="Write an answer option here.">
                     </div>
+                </div>
+
+                <div class="control m-6">
+                    <h6>Choice D:</h6>
                     <div class="control">
-                        <input type="text" id="Choice-C" class="input" placeholder="Answer goes here">
+                        <input type="text" id="Choice-D" class="input" placeholder="Write an answer option here.">
                     </div>
-                    <div class="w-100"></div>
-                    <div class="control">
-                        <h4>Choice D:</h4>
-                    </div>
-                    <div class="control">
-                        <input type="text" id="Choice-D" class="input" placeholder="Answer goes here">
-                    </div>
-                    <div class="w-100"></div>
-                    <div>
-                        <h4>Correct Answer:</h4>
-                    </div>
+                </div>
+
+                <div class="m-3">
+                    <h5>Correct Answer:</h5>
                     <div class="select">
                         <select class="dropdownMenu" id="Correct-Choice">
-                          <option>Select dropdown</option>
-                          <option value="choiceA">A</option>
-                          <option value="choiceB">B</option>
-                          <option value="choiceC">C</option>
-                          <option value="choiceD">D</option>
+                            <option>Select the Correct Answer Choice.</option>
+                            <option value="choiceA">A</option>
+                            <option value="choiceB">B</option>
+                            <option value="choiceC">C</option>
+                            <option value="choiceD">D</option>
                         </select>
-                      </div>
-                    <div class="nextQuestionButton">
-                        <button id="reset-question" class="button questionBtn">Reset Question</button>
-                        <button class="button questionBtn" type="submit">Submit Questions</button>
-                        <button class="button questionBtn">View Questions</button>
-                    </div>
-                    <div class="button-questions">
-                        
                     </div>
 
-                 </div>
+                </div>
+
+            </div>
+
+
+            <div class="nextQuestionButton">
+                {{!-- <button id="reset-question" class="button questionBtn">Reset Question</button> --}}
+                <button class="button questionBtn is-green has-text-white" type="submit">Submit Question</button>
+                <button class="button questionBtn" href="/dashboard/questions">View Questions</button>
+            </div>
+            <div class="button-questions">
+
+            </div>
+
+        </div>
     </form>
 </div>
 
