@@ -21,11 +21,8 @@ Finally, an app that allows instructors to quickly create quizzes and print the 
 | Baiyang | [cffhr99](https://github.com/cffhr99) | Database Schema, Sql Queries, Package - Puppeteer |
 | Gaye Proctor | [gayebroni](https://github.com/gayebroni) | About Me, Documentation, Sample Questions for Seed, Came Up with the name "Quizam" |
 
-## Demo
-Coming soon!
-
 ## Usage 
-To use this project, go to the live site (coming soon)!
+To use this project, go to the live site [here](https://quizam.herokuapp.com/)!
 
 ## Contribution
 To contribute to this project, clone or fork the repo, then run `npm i express puppeteer mysql2 sequelize bcrypt express-handlebars`.
