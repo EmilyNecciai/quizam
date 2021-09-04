@@ -1,0 +1,9 @@
+<div class="container is-fluid">     
+        <h2 class="title pb-4">List: All Created Subjects</h2><hr>
+
+{{#if subjects.length}}
+    {{#each subjects as |subject|}}
+     {{>subject-info subject}}
+    {{/each}}
+{{/if}}
+</div>

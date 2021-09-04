@@ -15,24 +15,27 @@ Instructor.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true,
+      autoIncrement: true
     },
     name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
+      validate: {
+        isEmail: true
+      }
     },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [4],
-      },
-    },
+      }
+    }
   },
   {
     hooks: {
@@ -46,7 +49,7 @@ Instructor.init(
           10
         );
         return updatedInstructor;
-      },
+      }
     },
 
     // pass in our imported sequelize connection (the direct connection to our database)

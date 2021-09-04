@@ -76,9 +76,10 @@ router.get("/:id", (req, res) => {
 //Create new Subject
 router.post("/", withAuth, (req, res) => {
   // expects {title: 'Math!', instructor_id: 1}
+  console.log(req.session)
   Subject.create({
     name: req.body.name,
-    instructor_id: req.body.instructor_id,
+    instructor_id: req.session.user_id,
   })
     .then((dbSubjectData) => res.json(dbSubjectData))
     .catch((err) => {

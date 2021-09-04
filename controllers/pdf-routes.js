@@ -2,10 +2,46 @@ const router = require("express").Router();
 const withAuth = require("../utils/auth");
 const createpdf = require('../utils/createPDF')
 const path = require('path')
+const { Instructor, Subject, Question } = require("../models");
+const sequelize = require('../config/connection');
 
-router.get('/',(req,res)=>{
+router.get("/", (req, res) => {
+  console.log(req.session)
+  Question.findAll({
+    attributes: [
+      "id",
+      "title",
+      "correct_answer",
+      "choiceA",
+      "choiceB",
+      "choiceC",
+      "choiceD",
+      "subject_id",
+      [sequelize.literal('(SELECT name FROM subjects WHERE subjects.id = questions.subject_id)'), 'subject_name']
+    ],
+    include: [
+      {
+        model: Subject,
+        attributes: [
+          "id",
+          "name"
+        ],
+      },
+    ],
+  })
+    .then((dbQuestionData) => {
+      const questions = dbQuestionData.map(question => question.get({plain:true}));
+      res.render('pdf-question',{questions, loggedIn: true});
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+router.get('/export-pdf',(req,res)=>{
   // replace 'pagepath' to the question api address 
-    let pagepath = 'https://quizam.herokuapp.com/';//for localhost using http install of https, https wii cause SSL error.
+    let pagepath = 'http://localhost:3001/pdf';//for localhost using http install of https, https wii cause SSL error.
   // replace 'pdfpath' to a local address
     let pdfpath = path.join(__dirname,'/post.pdf');
     // let pdfpath = 'post.pdf';

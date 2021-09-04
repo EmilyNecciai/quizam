@@ -1,15 +1,15 @@
 async function newFormHandler(event) {
     event.preventDefault();
   
-    const title = document.querySelector('input[name="question-title"]').value;
-    const correct_answer = document.querySelector('input[name="question-correct"]').value;
-    const choiceA = document.querySelector('input[name="answerA"]').value;
-    const choiceB = document.querySelector('input[name="answerB"]').value;
-    const choiceC = document.querySelector('input[name="answerC"]').value;
-    const choiceD = document.querySelector('input[name="answerD"]').value;
-    const subject_id = document.querySelector('input[name="subject"]').value;
+    const title = document.querySelector('#question-title').value;
+    const correct_answer = document.querySelector('#Correct-Choice').value;
+    const choiceA = document.querySelector('#Choice-A').value;
+    const choiceB = document.querySelector('#Choice-B').value;
+    const choiceC = document.querySelector('#Choice-C').value;
+    const choiceD = document.querySelector('#Choice-D').value;
+    const subject_id = document.querySelector('#subject-choice').value;
 
-    const response = await fetch(`/api/posts`, {
+    const response = await fetch(`/api/questions`, {
       method: 'POST',
       body: JSON.stringify({
         title,
@@ -26,11 +26,17 @@ async function newFormHandler(event) {
     });
   
     if (response.ok) {
-      document.location.replace('/');
+      document.location.replace('/dashboard/addquestion');
     } else {
       alert(response.statusText);
     }
   }
   
-  document.querySelector('.new-question-form').addEventListener('submit', newFormHandler);
+function return_page(event){
+  event.preventDefault();
+  document.location.replace('/dashboard/addquestion');
+}
+
+document.querySelector('#reset-question').addEventListener('click',return_page)
+document.querySelector('#add-question').addEventListener('submit', newFormHandler);
   

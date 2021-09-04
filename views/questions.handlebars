@@ -1,0 +1,13 @@
+<div class="container is-fluid">     
+        <h2 class="title pb-4">List: All Correct Answers</h2><hr>
+
+{{#if questions.length}}
+<div class="row">
+    {{#each questions as |question|}}
+     {{>question-info question}}
+    {{/each}}
+</div>
+{{/if}}
+
+
+</div>

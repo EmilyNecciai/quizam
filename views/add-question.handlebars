@@ -1,0 +1,78 @@
+ <div class="container">
+     <form id="add-question">
+                <div class="row">
+                    {{#if subjects.length}}
+                    <div>
+                        <h4>Class/Subject:</h4>
+                    </div>
+                    <div class="select">
+                        <select class="dropdownMenu" id="subject-choice">
+                            <option>Select Subject</option>
+                         {{#each subjects as |subject|}}
+                         <option value={{subject.id}}>
+                             ({{subject.id}}): {{subject.name}}
+                         </option>
+                         {{/each}}
+                        </select>
+                    </div>
+                    {{/if}}
+                    <div class="question-header">
+                        <h4>Questions:</h4>
+                    </div>
+                    <div class="control">
+                        <input class="input" id="question-title" type="text" placeholder="Text input">
+                    </div>
+                    <div class="control">
+                        <h4>Choice A:</h4>
+                    </div>
+                    <div class="control">
+                        <input type="text" id="Choice-A" class="input" placeholder="Answer goes here">
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="control">
+                        <h4>Choice B:</h4>
+                    </div>
+                    <div class="Control">
+                        <input type="text" id="Choice-B" class="input" placeholder="Answer goes here">
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="control">
+                        <h4>Choice C:</h4>
+                    </div>
+                    <div class="control">
+                        <input type="text" id="Choice-C" class="input" placeholder="Answer goes here">
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="control">
+                        <h4>Choice D:</h4>
+                    </div>
+                    <div class="control">
+                        <input type="text" id="Choice-D" class="input" placeholder="Answer goes here">
+                    </div>
+                    <div class="w-100"></div>
+                    <div>
+                        <h4>Correct Answer:</h4>
+                    </div>
+                    <div class="select">
+                        <select class="dropdownMenu" id="Correct-Choice">
+                          <option>Select dropdown</option>
+                          <option value="choiceA">A</option>
+                          <option value="choiceB">B</option>
+                          <option value="choiceC">C</option>
+                          <option value="choiceD">D</option>
+                        </select>
+                      </div>
+                    <div class="nextQuestionButton">
+                        <button id="reset-question" class="button questionBtn">Reset Question</button>
+                        <button class="button questionBtn" type="submit">Submit Questions</button>
+                        <button class="button questionBtn">View Questions</button>
+                    </div>
+                    <div class="button-questions">
+                        
+                    </div>
+
+                 </div>
+    </form>
+</div>
+
+<script src="/javascript/add-question.js"></script>
