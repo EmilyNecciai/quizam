@@ -11,14 +11,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet" />
 
     <!---Materialized-->
-    {{!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" /> --}}
+    {{!--
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    --}}
 
     <!---Bulma-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
 
     <!---Bootstrap-->
-    {{!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" /> --}}
+    {{!--
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" /> --}}
     <link rel="stylesheet" href="../stylesheets/style.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+
 
     <title>QUIZZAM</title>
 </head>
@@ -29,7 +34,7 @@
     <section class="hero">
         <header class="hero-body">
             <div class="title is-large">
-                <h1>Quiz<img class="logo" src="../images/logo1.png" width="50" height="50" />am</h1>
+                <h1 class="needs-mobile">Quiz<img class="logo" src="../images/logo1.png" width="50" height="50" />am</h1>
             </div>
         </header>
     </section>
@@ -49,9 +54,9 @@
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
 
-                <a class="navbar-item" href="/documentation">
+                {{!-- <a class="navbar-item" href="/documentation">
                     Documentation
-                </a>
+                </a> --}}
 
                 <a class="navbar-item" href="/about">
                     About Us
