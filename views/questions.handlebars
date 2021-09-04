@@ -1,13 +1,19 @@
-<div class="container is-fluid">     
-        <h2 class="title pb-4">List: All Correct Answers</h2><hr>
+<div class="box m-6">
+    <h2 class="title pb-4">Your Quiz</h2>
+    <a class="button is-green" href="/pdf/export-pdf" target="_blank">Export PDF of Quiz</a>
 
-{{#if questions.length}}
-<div class="row">
-    {{#each questions as |question|}}
-     {{>question-info question}}
-    {{/each}}
+    <hr>
+
+
+    {{#if questions.length}}
+    <div class="row">
+        {{#each questions as |question|}}
+        {{>question-info question}}
+        {{/each}}
+    </div>
+    {{/if}}
+
+
 </div>
-{{/if}}
 
-
-</div>
+<script src="/javascript/delete-question.js"></script>
