@@ -2,8 +2,11 @@
         <h2 class="title pb-4">List: All Created Subjects</h2><hr>
 
 {{#if subjects.length}}
+<ul id="subject-list">
     {{#each subjects as |subject|}}
-     {{>subject-info subject}}
+   <li>  {{>subject-info subject}}</li>
     {{/each}}
+</ul>
 {{/if}}
 </div>
+<script src="/javascript/delete-subject.js"></script>
