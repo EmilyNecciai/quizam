@@ -5,7 +5,30 @@
   --third: #23b5d3;
   --fourth: #21a179;
   --fifth: #596475;
+  --muted-pink: #F4817F;
 }
+
+a {
+  text-decoration: none;
+}
+
+.navbar a {
+  color: black;
+}
+
+.navbar a:hover {
+  color: var(--muted-pink);
+}
+
+a.navbar-item:hover {
+  color: var(--muted-pink);
+}
+
+a:hover {
+  color: var(--third);
+}
+
+
 
 h1 {
   font-family: "Rampart One", cursive;
@@ -13,14 +36,15 @@ h1 {
   text-align: center;
   background-color: var(--first);
   font-size: 180px;
+  color: black;
 }
 
 /* nav {
   margin-top:40px;
 } */
 
-.navbar {
-  background-color: var(--first);
+.navbar, .navbar-dropdown {
+  background-color: var(--muted-pink);
 }
 
 body {
@@ -79,6 +103,8 @@ form {
 
 .login-button {
   margin-top: 20px;
+  background-color: var(--fourth) !important;
+
 }
 
 .email-container {
