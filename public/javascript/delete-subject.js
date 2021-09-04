@@ -1,19 +1,19 @@
-async function deleteFormHandler(event) {
-    event.preventDefault();
-  
-    const id = window.location.toString().split('/')[
-      window.location.toString().split('/').length - 1
-    ];
+async function deleteFormHandler(event,id) {
     const response = await fetch(`/api/subjects/${id}`, {
       method: 'DELETE'
     });
   
     if (response.ok) {
-      document.location.replace('/dashboard/');
+      document.location.replace('/dashboard/subjects');
     } else {
       alert(response.statusText);
     }
   }
-  
-  document.querySelector('.delete-post-btn').addEventListener('click', deleteFormHandler);
-  
+
+
+  const list = document.querySelector("#subject-list").getElementsByTagName("li")
+  console.log(list[0].getElementsByTagName("h2")[0].innerText.toString().split(':')[0])
+  for (var i = 0; i < list.length; i++){
+    const id = list[i].getElementsByTagName("h2")[0].innerText.toString().split(':')[0];
+    list[i].querySelector('#delete-subject').addEventListener('click',(event)=>deleteFormHandler(event,id));
+  } 
