@@ -41,7 +41,7 @@ router.get("/", (req, res) => {
 
 router.get('/export-pdf',(req,res)=>{
   // replace 'pagepath' to the question api address 
-    let pagepath = 'http://localhost:3001/pdf';//for localhost using http install of https, https wii cause SSL error.
+    let pagepath = 'https://quizam.herokuapp.com/pdf';//for localhost using http install of https, https wii cause SSL error.
   // replace 'pdfpath' to a local address
     let pdfpath = path.join(__dirname,'/post.pdf');
     // let pdfpath = 'post.pdf';
