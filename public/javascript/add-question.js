@@ -37,6 +37,6 @@ function return_page(event){
   document.location.replace('/dashboard/addquestion');
 }
 
-document.querySelector('#reset-question').addEventListener('click',return_page)
+// document.querySelector('#reset-question').addEventListener('click',return_page)
 document.querySelector('#add-question').addEventListener('submit', newFormHandler);
   
