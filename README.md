@@ -16,10 +16,10 @@ Finally, an app that allows instructors to quickly create quizzes and print the 
 
 | Name | Github | Owns... | 
 | ---- | ------ | --------|
-| Emily Mayeski | [EmilyNecciai](https://www.github.com/EmilyNecciai) | Project Leader, Routes, Models, Heroku | 
+| Emily Mayeski | [EmilyNecciai](https://www.github.com/EmilyNecciai) | Project Leader, Routes, Models, Heroku, Bulma | 
 | Shane Chrisostomo | [shaner3423](https://github.com/shaner3423) | Front End Design, Materialize, UX, Handlebars |
-| Baiyang | [cffhr99](https://github.com/cffhr99) | Database Schema, Sql Queries, Package - Puppeteer |
-| Gaye Proctor | [gayebroni](https://github.com/gayebroni) | About Me, Documentation, Sample Questions for Seed, Came Up with the name "Quizam" |
+| Baiyang | [cffhr99](https://github.com/cffhr99) | Database Schema, Sql Queries, PDF Package - Puppeteer, Javascript, Debugger |
+| Gaye Proctor | [gayebroni](https://github.com/gayebroni) | About Me, Presentation, Documentation, Sample Questions for Seed, Came Up with the name "Quizam" |
 
 ## Usage 
 To use this project, go to the live site [here](https://quizam.herokuapp.com/)!
